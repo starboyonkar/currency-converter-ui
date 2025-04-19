@@ -5,13 +5,6 @@ pipeline {
         maven 'Maven 3.8.6'
     }
 
-    stages {
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/starboyonkar/currency-converter-ui.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean install'
