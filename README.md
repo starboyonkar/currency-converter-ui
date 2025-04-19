@@ -1,6 +1,6 @@
 # Currency Converter UI (Java CLI)
 
-A simple Java CLI application that converts USD to INR using a static conversion rate.  
+A simple Java CLI application that converts USD to INR using a static conversion rate for USd and Ruppee only.  
 This project demonstrates a Jenkins-integrated CI/CD pipeline triggered on GitHub push.
 
 ## Features
