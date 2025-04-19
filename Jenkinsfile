@@ -20,7 +20,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                echo 'Build complete. Run the app manually if needed no need actually.'
+                echo 'Build complete. Run the app manually if needed, no need actually.'
             }
         }
     }
