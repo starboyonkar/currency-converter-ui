@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-username/currency-converter-ui.git'
+                git 'https://github.com/starboyonkar/currency-converter-ui.git'
             }
         }
 
