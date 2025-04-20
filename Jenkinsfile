@@ -2,10 +2,26 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.6'
+        maven 'Maven 3.8.6'  // Must match the name in Jenkins global tool config
+    }
+
+    environment {
+        GIT_REPO = 'https://github.com/starboyonkar/currency-converter-ui.git'
+        BRANCH = 'main'
+    }
+
+    triggers {
+        githubPush()  // Enables GitHub webhook trigger
     }
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: "${BRANCH}",
+                    url: "${GIT_REPO}"
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'mvn clean install'
@@ -20,17 +36,17 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                echo 'Build complete...you are CICD-master'
+                echo 'Build complete. Run the app manually if needed.'
             }
         }
     }
 
     post {
         success {
-            echo 'Build Successful!'
+            echo '✅ Build was successful!'
         }
         failure {
-            echo 'Build Failed!'
+            echo '❌ Build failed!'
         }
     }
 }
