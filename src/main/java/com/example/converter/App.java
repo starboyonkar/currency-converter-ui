@@ -8,7 +8,7 @@ public class App {
         System.out.println("Enter amount in USD:");
         double usd = scanner.nextDouble();
         double inr = Converter.convertToINR(usd);
-        System.out.printf("Converted: %.2f USD = %.2f INR\n", usd, inr);
+        System.out.printf("Converted currency: %.2f USD = %.2f INR\n", usd, inr);
         scanner.close();
     }
 }
